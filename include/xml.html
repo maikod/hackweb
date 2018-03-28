@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" >
+<head>
+<title>HTML.it | AJAX | Primo esempio</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="HTML.it | Guida ajax, request testuale" />
+<meta name="keywords" content="guida, ajax, remote scripting, esempio, esempi" />
+<meta name="author" content="Andrea Giammarchi per HTML.IT" />
+<script type="text/javascript"  src="../js/utility.js"><!--// ajax utility //--></script>
+<script type="text/javascript"><!--//
+
+function resetta(){
+	elemento = prendiElementoDaId("contenuto-dinamico");
+	elemento.innerHTML = "Questo testo è stato inserito all'interno di un elemento di tipo div con id univoco: contenuto-dinamico.<br />Per cambiare questo contenuto è sufficiente clickare su <!-- è importante fare caso alla costruzione di questo link: permette di leggere il testo anche senza AJAX --><a href=\"risultati.htm\" onclick=\"return caricaTesto(this.href);\" onkeypress=\"return this.onclick();\" tabindex=\"1\">questo link</a>.";
+	return false;
+}
+
+// funzione di caricamento testo,
+// accetta una stringa contenente
+// il nome di un file da leggere
+function caricaTesto(nomeFile) {
+
+
+  // variabili di funzione
+  var
+    // assegnazione oggetto XMLHttpRequest
+    ajax = new XMLHttpRequest(),
+    // assegnazione elemento del documento
+    elemento = prendiElementoDaId("contenuto-dinamico"),
+    // risultato booleano di funzione
+    usaLink = true;
+  
+  // se l'oggetto XMLHttpRequest non è nullo
+  if(ajax) {
+    // il link al file non deve essere usato
+    usaLink = false;
+
+    // impostazione richiesta asincrona in GET
+    // del file specificato
+    ajax.open("get", nomeFile, true);
+
+    // rimozione dell'header "connection" come "keep alive"
+    ajax.setRequestHeader("connection", "close");
+
+    // impostazione controllo e stato della richiesta
+    ajax.onreadystatechange = function() {
+      
+      // verifica dello stato
+      if(ajax.readyState === readyState.COMPLETATO) {
+        // verifica della risposta da parte del server
+        if(statusText[ajax.status] === "OK"){
+          // operazione avvenuta con successo
+          if(ajax.responseXML){
+		  	elemento.innerHTLM = ajax.responseXML;
+		  }else{
+		  elemento.innerHTML = "...leggo in testo normale: (se vuoi tornare indietro <a href=\"\" onclick=\"return resetta();\">clicca qui</a>)<br><br>" + ajax.responseText;
+		  }
+		}
+        else {
+          // errore di caricamento
+          elemento.innerHTML = "Impossibile effettuare l'operazione richiesta.<br />";
+          elemento.innerHTML += "Errore riscontrato: " + statusText[ajax.status] + " " + ajax.status;
+        }
+      } 
+    }
+
+    // invio richiesta
+    ajax.send(null);
+  }
+   
+  return usaLink;
+} 
+
+//--></script>
+<style type="text/css" media="all">
+body {
+ font-family: Verdana, Helvetica, sans-serif;
+ font-size: 9pt;
+ background: #FFF;
+ color: #000;
+}
+h1 {
+ font-size: 12pt;
+ border-bottom: 1px solid silver;
+ color: #009;
+}
+</style>
+</head>
+<body>
+<div>
+<h1>Request Testuale</h1>
+
+<div id="contenuto-dinamico">
+Questo testo è stato inserito all'interno di un elemento di tipo div
+con id univoco: contenuto-dinamico .<br />
+Per cambiare questo contenuto è sufficiente clickare su
+
+<!-- è importante fare caso alla costruzione di questo link:
+     permette di leggere il testo anche senza AJAX -->
+<!--<a href="risultati.htm"
+onclick="return caricaTesto(this.href);"
+onkeypress="return this.onclick();"
+tabindex="1">questo link</a>-->
+<a href=""
+onclick="return caricaTesto('risultati.htm');"
+onkeypress="return this.onclick();"
+tabindex="1">questo link</a>.</div>
+
+</div>
+</body>
+</html> 

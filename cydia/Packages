@@ -1,0 +1,26 @@
+Package: iLaPlaca
+Version: 1.0
+Section: Frankie's
+Maintainer: Frankie
+Architecture: iphoneos-arm
+Filename: debs/iLaPlaca.deb
+Size: 44450
+MD5sum: 712edf2f5cfeae6e919e6b427cda122a
+Description: Le app dei La Placa :)
+website: hackweb.altervista.org
+name: iLaPlaca
+sponsor: Frankie
+
+Package: iTennis
+Version: 2.0
+Section: Frankie's
+Maintainer: Frankie
+Architecture: iphoneos-arm
+Filename: debs/iTennis.deb
+Size: 72834
+MD5sum: 9349c76d41cd9796e848df29762ace56
+Description: il tennis dei La Placa
+website: hackweb.altervista.org
+name: iTennis
+sponsor: Frankie
+

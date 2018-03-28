@@ -1,0 +1,22 @@
+<script type="text/javascript" src="../js/caricamento.js"></script>
+<script type="text/javascript" src="../js/leggiNewsGoogle.js"></script>
+<div>
+	<form
+		method="get"
+		action="http://news.google.it/news"
+		onsubmit="return leggiNewsGoogle('paese', 'visualizza', 'risultato');"
+	>
+	<fieldset>
+	<legend>Di quale paese ti interessano le news?</legend>
+	<label for="paese">lingua e paese scelti per le news</label>
+	<select tabindex="1" id="paese" name="ned">
+	<option value="en_ie">Irlanda</option>
+	<option value="it">Italia</option>
+	<option value="es_mx">Messico</option>
+	</select>
+	<label for="visualizza">visualizza il risultato</label>
+	<input tabindex="2" id="visualizza" type="submit" value="leggi le news" />
+	</fieldset>
+	</form>
+	</div>
+	<div id="risultato"></div>

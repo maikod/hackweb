@@ -1,0 +1,318 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+
+body {
+	background : #000;
+	color : #888;
+	width: 100%;
+	height: 100%;
+	font-family: Verdana;
+	font-size: 12px;
+	text-align: center;	
+	vertical-align: middle;
+}
+
+body, td, th {
+	font-size: 10px;
+}
+
+#struttura{
+    width: 50%;
+    word-wrap: break-word;
+}
+
+#menu_block {
+
+}
+
+#logo table{
+    width: 100%;
+}
+
+#logo table tr td{
+    width: 100%;
+    background-image: url('../images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#struttura table{
+    width: 100%;   
+    table-layout: fixed;
+}
+
+#col-menu{
+    width: 13%;
+}
+
+.col-cent{
+    width: 50%;   
+}
+
+.col-dx{
+    width: 14%;
+}
+
+.table-dx{
+    width: 100%;
+}
+
+#menu_block #main_menu{
+	width: 90%;
+	text-align: left;
+	font-size: 10px;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	vertical-align: middle;	
+}
+.cell {
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding: 5px;
+}
+
+#menu_block #main_menu li a{
+	display: block;
+	padding: 5px;
+	color: #CCCCCC;
+	background-color: #272727;
+	text-decoration: none;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-left: 0px;
+	border-radius:10px;
+}
+#menu_block #main_menu li a:hover{
+	background-color: #2f3d51;
+}
+.logincell {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding: 2px;
+	color: #00FF00;
+}
+.form {
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.xfr1 {
+	font-size: 10px;
+	color: #000000;
+}
+a:visited {
+	color: #009900;
+}
+a:link {
+	color: #00FF00;
+}
+.style2 {
+	font-size: 10;
+	color: #00FF00;
+	border-color: #999999;
+}
+.style4 {
+	color: #00FF00;
+	font-size: 16px;
+	font-weight: bold;
+}
+.hack_menu {
+	color: #00FF00;
+}
+.style7 {
+	font-size: 10px;
+	color: #00FF00;
+}
+
+.tab-pratiche{
+	border: 1px groove #ffffff;
+	padding: 3px;
+}
+
+/* home
+--------------------------------------------------------------- */
+#list-home ul li{
+    list-style-type: none;
+}
+
+
+/* assistenza
+--------------------------------------------------------------- */
+#assistenza{
+    width: 40%;   
+}
+
+#assistenza table{
+    width: 100%;   
+}
+
+#form1 input[type=text]{
+    width: 90%;
+}
+
+#form1 textarea{
+    width: 89%;
+}
+
+/* forms
+--------------------------------------------------------------- */
+.formsDiv{
+    width: 40%;   
+    padding-left: 3%;
+}
+
+.formsDiv table{
+    width: 100%;   
+}
+
+.forms input[type=text]{
+    width: 90%;
+}
+
+.forms input[type=password]{
+    width: 90%;
+}
+
+.forms textarea{
+    width: 89%;
+}
+
+
+/* RESPONSIVE
+--------------------------------------------------------------- */
+@media screen and (max-width: 1300px) {
+    body {
+        background: black;
+    }
+    
+    #struttura{
+        width: 65%;
+        word-wrap: break-word;
+    }
+    
+    #col-menu{
+        width: 10%;
+    }
+
+    .col-cent{
+        width: 50%;   
+    }
+
+    .col-dx{
+        width: 14%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        background: black;
+    }
+    
+    #struttura{
+        width: 100%;
+        word-wrap: break-word;
+    }
+    
+    #col-menu{
+        width: 20%;
+    }
+
+    .col-cent{
+        width: 60%;   
+    }
+
+    .col-dx{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background: black;
+    }
+    
+    #struttura{
+        width: 100%;
+        word-wrap: break-word;
+    }
+    
+    #col-menu{
+        width: 20%;
+    }
+
+    .col-cent{
+        width: 50%;   
+    }
+
+    .col-dx{
+        width: 20%;
+    }
+    
+    #form1 input[type=text]{
+    width: 90%;
+    }
+    
+    #form1 textarea{
+    width: 95%;
+    }
+    
+    #assistenza{
+        width: 100%;   
+    }
+
+    #assistenza table{
+        width: 100%;   
+    }
+    
+    /* forms
+    --------------------------------------------------------------- */
+    .formsDiv{
+        width: 100%;   
+    }
+
+    .formsDiv table{
+        width: 100%;   
+    }
+
+    .forms input[type=text]{
+        width: 90%;
+    }
+
+    .forms input[type=password]{
+        width: 90%;
+    }
+
+    .forms textarea{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    body {
+        background: black;
+    }
+    
+    #struttura{
+        width: 100%;
+        word-wrap: break-word;
+    }
+    
+    #col-menu{
+        width: 18%;
+    }
+
+    .col-cent{
+        width: 50%;   
+    }
+
+    .col-dx{
+        width: 20%;
+        display: none;
+    }
+}
