@@ -1534,7 +1534,7 @@ blockquote {
   background: hsla(0, 0%, 100%, 0.75);
 }
 .home-accopiatore-view{
-  margin: 60px 20%;
+  margin: 60px 27%;
   position: relative;
   font-family: avenir;
 }
@@ -1636,7 +1636,11 @@ blockquote {
 .frankousel-prev-next-button{
   opacity: 0;
 }
-
+@media (max-width: 1600px) {
+  .home-accopiatore-view{
+    margin: 60px 20%;    
+  }
+}
 @media (max-width: 768px) {
   .home-accopiatore-actions{
     margin-top: 0px;

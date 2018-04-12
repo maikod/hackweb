@@ -121,9 +121,6 @@ include_once('libs/config.php');
         </div>
         <!-- /.footer -->
     </div>
-
-    <div id="products"></div>
-
 </body>
 </html>
 
@@ -151,9 +148,6 @@ include_once('libs/config.php');
 <script src="js/summernote/summernote-bs4.js"></script>
 <script src="js/frankousel/frankousel.js"></script>
 <script src="js/jquery-ui/jquery-ui.min.js"></script>
-<script src="http://sdks.shopifycdn.com/js-buy-sdk/v1/latest/index.umd.min.js"></script>
-<!-- <scipt src="node_modules/shopify-buy/index.umd.js"></script> -->
-<!-- <scipt src="js/shopify.js"></script> -->
 
 <!-- personal scripts -->
 <script src="js/custom.js?v=0.002"></script>
@@ -193,30 +187,4 @@ $(function() {
 	//primo caricamento della pagina
     init();
 });
-
-
-//shopify
-const shopClient = ShopifyBuy.buildClient({
-    domain: 'shoptestmatteo.myshopify.com',
-    storefrontAccessToken: 'f4c0362462beea6bbd0c9a2a00c6d5f3'
-});
-
-     
-shopClient.product.fetchAll().then((products) => {
-    // Do something with the products
-    console.log(products);
-    buildProducts(products)
-});
-
-let buildProducts = (products) => {
-    // products.forEach((product) => {
-    //     let productContainer = $('<div/>').attr('id', `product_${product.attrs.product_id}`)
-    //     let title = `<h2>${product.attrs.title}</h2>`
-    //     let img = `<img src="${product.images[0].src}/">`
-    //     let price = `<p class="productPrice-${product.id}">${product.attrs.variants[0].formatted_price}</p>`
-    //     productContainer.append(title, img, price)
-    //     $('#products').append(productContainer)
-    // })
-};  
-
 </script>

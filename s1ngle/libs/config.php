@@ -1,11 +1,10 @@
 <?php
 
-if(@$_SERVER["HTTPS"] != "on" && $_SERVER['SERVER_NAME'] != '::1' && $_SERVER['SERVER_NAME'] != '127.0.0.1' && $_SERVER['SERVER_NAME'] != 'localhost')
+if(@$_SERVER["HTTPS"] != "on" && $_SERVER['REMOTE_ADDR'] != '::1')
 {
     header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
     exit();
 }
-
 
 @$params = explode( "/", $_GET['params'] );
 
@@ -31,7 +30,7 @@ if($params[0] == 'include')
 
 define('HOST', explode('/', $_SERVER['REQUEST_URI'])[1]);
 $_SESSION['HOST'] = HOST;
-$link = ($_SERVER['SERVER_NAME'] == '::1') ? 'localhost' : $_SERVER['SERVER_NAME'];
+$link = ($_SERVER['REMOTE_ADDR'] == '::1') ? 'localhost' : $_SERVER['SERVER_NAME'];
 $_SESSION['full_link'] = 'http://'.$link.'/'.HOST.'/';
 $_SESSION['lang'] = !@$params[0] ? 'en' : @$params[0];
 $_SESSION['params'] = @$params;

@@ -7,7 +7,6 @@ if ($_FILES['file']['name']) {
         $destination = 'img/' . $filename; //change this directory
         $location = $_FILES["file"]["tmp_name"];
         move_uploaded_file($location, $destination);
-        // imagejpeg($location, $destination, 5);
         echo 'files/file_upload/img/' . $filename; //change this URL
     }
     else
