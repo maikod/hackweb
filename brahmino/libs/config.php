@@ -1,8 +1,14 @@
 <?php
+
+//variables
+$protocol = 'https';
+
 if(@$_SERVER["HTTPS"] != "on" && $_SERVER['SERVER_NAME'] != '::1' && $_SERVER['SERVER_NAME'] != '127.0.0.1' && $_SERVER['SERVER_NAME'] != '192.168.1.110' && $_SERVER['SERVER_NAME'] != 'localhost')
 {
     header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
     exit();
+}else{
+    $protocol = 'http';
 }
 
 @$params = explode( "/", $_GET['params'] );
@@ -28,9 +34,9 @@ if($params[0] == 'include')
 @session_start();
 
 define('HOST', explode('/', $_SERVER['REQUEST_URI'])[1]);
-$_SESSION['HOST'] = HOST;
+$_SESSION['HOST'] = ($_SERVER['SERVER_NAME'] == '10.0.39.176' || $_SERVER['SERVER_NAME'] == '127.0.0.1') ? '/'.HOST.'/' : '/';
 $link = ($_SERVER['SERVER_NAME'] == '::1') ? 'localhost' : $_SERVER['SERVER_NAME'];
-$_SESSION['full_link'] = 'http://'.$link.'/'.HOST.'/';
+$_SESSION['full_link'] = $protocol.'://'.$link.$_SESSION['HOST'];
 if(!@$params[0]) @$params[0] = '__';
 $_SESSION['lang'] = (@$params[0] == '__') ? 'en' : @$params[0];
 $_SESSION['params'] = @$params;

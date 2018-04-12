@@ -11,15 +11,15 @@ include_once('libs/config.php');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="S1NGLE">
+    <meta name="description" content="s1ngle">
     <meta property="og:image" content="" />
-    <meta property="og:title" content="S1NGLE" />
-    <meta property="og:description" content="S1NGLE"/>
-    <meta property="og:site_name" content="S1NGLE"/>
+    <meta property="og:title" content="s1ngle" />
+    <meta property="og:description" content="s1ngle"/>
+    <meta property="og:site_name" content="s1ngle"/>
     <meta property="og:type" content="website"/>
     <base href="<?php echo HOST; ?>">
 
-    <title>S1NGLE</title>
+    <title>s1ngle</title>
 
     <!-- icona sito -->
     <link rel="icon" type="image/png" href="img/logo.png">
@@ -49,18 +49,75 @@ include_once('libs/config.php');
     <!-- personal CSS fonts -->    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">     
     <!-- <link rel="stylesheet" href="js/font-awesome/font-awesome.min.css" />   -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Gloria+Hallelujah" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Quattrocento" rel="stylesheet">
+
+
+
+    <!-- JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- JQUERY -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" async defer></script> -->
+    <script src="js/jquery/jquery-3.2.1.min.js"></script>
+    
+    <!-- library scripts -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous" async defer></script> -->
+    <script src="js/popper.min.js" async defer></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous" async defer></script> -->
+    <script src="js/bootstrap/bootstrap.min.js" async defer></script>
+    <script src="js/masonry.pkgd.min.js" async defer></script>
+    <script src="js/iso.t.js" async defer></script>
+    <!-- <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js" async defer></script> -->
+    <script src="js/imagesloaded.pkgd.min.js" async defer></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" async defer></script> -->
+    <script src="js/fancybox/jquery.fancybox.min.js" async defer></script>
+    <script src="js/file_upload/js/vendor/jquery.ui.widget.js" defer></script>     
+    <script src="js/file_upload/js/jquery.iframe-transport.js" defer></script>
+    <script src="js/file_upload/js/jquery.fileupload.js" defer></script>
+    <script src="js/instafeed.min.js" defer></script>
+    <script src="js/summernote/summernote-bs4.js" async defer></script>
+    <script src="js/filesaver.js" async defer></script>
+    <script src="js/blob.js" async defer></script>     
+    <script src="js/jquery-ui/jquery-ui.min.js" defer></script>
+    <script src="js/jquery.ui.touch-punch.min.js" defer></script>
+    <script async defer src="js/frankousel/frankousel.js"></script>
+    
+    <!-- personal scripts -->
+    <script src="js/variables.js?v=0.002" ></script>
+    <script src="js/custom.js?v=0.002" ></script>
+    <script src="js/functions.js?v=0.002"></script>
+    <script src="js/overview.js?v=0.002"></script>
+    <script src="js/admin.js?v=0.002"></script>
+
+    <!-- secondary scripts -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw0ZmNj6TqqcMyrlkYeZq2_x8xJoHPJfk&callback=initMap"></script> -->
+    <script async defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
 
+
 <body onresize="" style="" onload="">
+
+    <!-- include facebook sdk -->
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root" style="display:none;"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&autoLogAppEvents=1&version=v2.12&appId=2134505389899827';
+    js.async = true;
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- facebook sdk end -->
+
+
     <div id="main_page">        
-
-
         <!-- Navbar
         ================================================== -->
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -75,7 +132,7 @@ include_once('libs/config.php');
                 <ul class="navbar-nav ml-auto mt-0 mt-lg-0">
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="#">S1NGLE STORY</a>
+                        <a class="nav-link" href="#">s1ngle STORY</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="how_to">SHOP</a>
@@ -92,14 +149,12 @@ include_once('libs/config.php');
         <!-- /.navbar -->
 
 
-
         <!-- body -->
         <div id="main_container">
             <div id="main_inner">
 
             </div>
         </div>
-
 
 
         <!-- Footer
@@ -123,38 +178,44 @@ include_once('libs/config.php');
         </div>
         <!-- /.footer -->
     </div>
+
+    <!-- modal jqueryui -->
+    <div id="modal" title="Are you sure?" style="display:none;">
+        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>This item will be permanently deleted and cannot be recovered. Are you sure?</p>
+    </div>
+
+    <!-- cookie -->
+    <div id="accept_cookie" style="<?php echo @$_COOKIE['cookiePolicy']; ?>; display:none;" >
+        <!-- This site uses cookies – small text files that are placed on your machine to help the site provide a better user experience. In general, cookies are used to retain user preferences, store information for things like shopping carts, and provide anonymised tracking data to third party applications like Google Analytics. As a rule, cookies will make your browsing experience better. However, you may prefer to disable cookies on this site and on others. The most effective way to do this is to disable cookies in your browser. We suggest consulting the Help section of your browser or taking a look at the About Cookies website which offers guidance for all modern browsers.         -->
+        This site uses cookies: <a class="cookie-link" id="cookie-more">Find out more.</a> <a class="cookie-link" id="cookie-close">Close.</a>
+        <br>
+        <!-- <button id="cookie-close" type="submit" class="btn btn-default btn-sm"><a style="color:#222222;">Close</a></button> -->        
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="cookie-policy-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="font-family:'Montserrat';">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Cookie Policy</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body cookie-body">
+                    This site uses cookies – small text files that are placed on your machine to help the site provide a better user experience. In general, cookies are used to retain user preferences, store information for things like shopping carts, and provide anonymised tracking data to third party applications like Google Analytics. As a rule, cookies will make your browsing experience better. However, you may prefer to disable cookies on this site and on others. The most effective way to do this is to disable cookies in your browser. We suggest consulting the Help section of your browser or taking a look at the About Cookies website which offers guidance for all modern browsers.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 
-<!-- JavaScript & CSS
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<!-- JQUERY -->
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
-<script src="js/jquery/jquery-3.2.1.min.js"></script>
-<!-- library scripts -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script> -->
-<script src="js/popper.min.js"></script>
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
-<script src="js/masonry.pkgd.min.js"></script>
-<script src="js/iso.t.js"></script>
-<!-- <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script> -->
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script> -->
-<script src="js/fancybox/jquery.fancybox.min.js"></script>
-<script src="js/file_upload/js/vendor/jquery.ui.widget.js"></script>
-<script src="js/file_upload/js/jquery.iframe-transport.js"></script>
-<script src="js/file_upload/js/jquery.fileupload.js"></script>
-<script src="js/instafeed.min.js"></script>
-<script src="js/summernote/summernote-bs4.js"></script>
-<script src="js/frankousel/frankousel.js"></script>
-<script src="js/jquery-ui/jquery-ui.min.js"></script>
 
-<!-- personal scripts -->
-<script src="js/custom.js?v=0.002"></script>
-<script src="js/overview.js?v=0.002"></script>
-<script src="js/admin.js?v=0.002"></script>
 
 <?php
 //php finale
@@ -188,5 +249,35 @@ $(window).on('load', function () {
 $(function() {		
 	//primo caricamento della pagina
     init();
+
+    //gestione cookies
+    var cookies = [];
+    var cookies_raw = document.cookie.split(';');
+    var i2 = 0;
+    for(i = 0; i < cookies_raw.length; i++){        
+        if(cookies_raw[i].includes('moodb-')){            
+            cookies[i2] = cookies_raw[i];
+            i2++;
+        }
+    }
+    $('.index-moodb').html(cookies.length);
+
+
+    //cookie policy
+    $('#cookie-close').click(function(){        
+        createCookie('cookiePolicy','display:none;',1000);					
+		$('#accept_cookie').slideUp('fast')
+		return false;
+    });
+    //cookie more link
+    $('#cookie-more').click(function(){
+        $('#cookie-policy-modal').modal('toggle')
+    });
+    //cookie close with timer
+    if(getCookie('cookiePolicy') == null){
+        window.setTimeout(function(){
+            $('#cookie-close').click();
+        }, 20000);
+    }    
 });
 </script>

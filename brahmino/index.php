@@ -15,7 +15,7 @@ include_once('libs/config.php');
     <meta property="og:description" content="Simone Bramante // Brahmino"/>
     <meta property="og:site_name" content="Simone Bramante // Brahmino"/>
     <meta property="og:type" content="website"/>
-    <base href="/<?php echo HOST; ?>/">
+    <base href="<?php echo HOST; ?>">
 
     <title>Simone Bramante // Brahmino &#8211; Photographer // Director</title>
 
