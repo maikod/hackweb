@@ -1,4 +1,8 @@
 <?php
+echo $_SERVER['REQUEST_URI'];
+
+exit(0);
+
 
 if(@$_SERVER["HTTPS"] != "on" && $_SERVER['REMOTE_ADDR'] != '::1')
 {
