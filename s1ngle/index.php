@@ -1,3 +1,5 @@
+<!-- s1ngle -->
+
 <?php
 //php iniziale
 include_once('libs/config.php');
@@ -15,7 +17,7 @@ include_once('libs/config.php');
     <meta property="og:description" content="S1NGLE"/>
     <meta property="og:site_name" content="S1NGLE"/>
     <meta property="og:type" content="website"/>
-    <base href="/<?php echo HOST; ?>/">
+    <base href="<?php echo HOST; ?>">
 
     <title>S1NGLE</title>
 
