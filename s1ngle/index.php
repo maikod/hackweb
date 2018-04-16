@@ -42,6 +42,7 @@ include_once('libs/config.php');
 
     <!-- personal CSS include-->
     <link href="css/custom.css?v=0.003" rel="stylesheet">
+    <link href="css/base.css?v=0.003" rel="stylesheet">
     <link href="css/custom.mobile.css?v=0.003" rel="stylesheet">
     <link href="css/admin.css?v=0.003" rel="stylesheet">
     <link href="css/admin.mobile.css?v=0.003" rel="stylesheet">
@@ -96,6 +97,11 @@ include_once('libs/config.php');
     <!-- secondary scripts -->
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw0ZmNj6TqqcMyrlkYeZq2_x8xJoHPJfk&callback=initMap"></script> -->
     <script async defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <!-- shopify -->
+    <!-- <script src="http://sdks.shopifycdn.com/js-buy-sdk/v1/latest/index.umd.min.js"></script> -->    
+    <script src="https://sdks.shopifycdn.com/buy-button/latest/buybutton.js"></script>
+    <script src="js/shopify/shopify.js"></script>
 </head>
 
 
@@ -242,9 +248,13 @@ if($result['potere'] >= 0){
 
 <!-- script finale -->
 <script>
-$(window).on('load', function () {
-	// eseguire quando tutti gli elementi (anche immagini) del primo caricamento sono stati effettuati
+//shopify variables
+var client = ShopifyBuy.buildClient({
+    domain: 's1ngle.myshopify.com',
+    storefrontAccessToken: '445279826d6edd0de201acd1f25092e5', // previously apiKey, now deprecated    
+    // appId: '6',
 });
+var ui = ShopifyBuy.UI.init(client);
 
 $(function() {		
 	//primo caricamento della pagina
@@ -279,5 +289,12 @@ $(function() {
             $('#cookie-close').click();
         }, 20000);
     }    
+    
+    //shopify
+    fetchAllProduct();
+});
+
+$(window).on('load', function () {
+	// eseguire quando tutti gli elementi (anche immagini) del primo caricamento sono stati effettuati
 });
 </script>

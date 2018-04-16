@@ -102,11 +102,11 @@
         </div>
 
         <div class="home-catalogo">
-            <div class="home-catalogo-barra">
+            <div id="buy-1" class="home-catalogo-barra">
                 LINEA S101
-                <div class="home-catalogo-buy">
+                <!-- <div  class="home-catalogo-buy">
                     SHOP    
-                </div>
+                </div> -->
                 <div class="home-catalogo-hider">
                 </div>
             </div>
@@ -256,221 +256,52 @@ $('.calzini-container a').unbind('touchstart', accopiatoreClickStart);
 $('.calzini-container a').bind('touchstart', accopiatoreClickStart);
 $('.calzini-container a').unbind('touchend', accopiatoreClickEnd);
 $('.calzini-container a').bind('touchend', accopiatoreClickEnd);
-</script>
 
-
-
-
-
-<script type="text/javascript">
-/*<![CDATA[*/
-
-(function () {
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) {
-      ShopifyBuyInit();
-    } else {
-      loadScript();
-    }
-  } else {
-    loadScript();
-  }
-
-  function loadScript() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = scriptURL;
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-    script.onload = ShopifyBuyInit;
-  }
-
-  function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({
-      domain: 'hackweb.myshopify.com',
-      apiKey: '14db04f19a98be81b4602d106eeec903',
-      appId: '6',
-    });
-
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
-      ui.createComponent('product', {
-        id: [276436975663],
-        node: document.getElementById('product-component-32146857162'),
-        moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
-        options: {
-  "product": {
-    "variantId": "all",
-    "width": "240px",
-    "contents": {
-      "img": false,
-      "imgWithCarousel": false,
-      "title": false,
-      "variantTitle": false,
-      "price": false,
-      "description": false,
-      "buttonWithQuantity": false,
-      "quantity": false
-    },
-    "text": {
-      "button": "MI PIACE... LA VOGLIO"
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0",
-          "margin-bottom": "50px"
-        }
-      },
-      "button": {
-        "background-color": "#ff0000",
-        "font-family": "Roboto, sans-serif",
-        "font-size": "13px",
-        "padding-top": "14.5px",
-        "padding-bottom": "14.5px",
-        "padding-left": "px",
-        "padding-right": "px",
-        ":hover": {
-          "background-color": "#e60000"
+var shop_options = {
+    product: {
+        iframe: false,
+        contents: {
+            img: false,
+            imgWithCarousel: false,
+            title: false,
+            variantTitle: false,
+            price: false,
+            options: false,
+            quantity: false,
+            quantityIncrement: false,
+            quantityDecrement: false,
+            quantityInput: false,
+            button: true,
+            buttonWithQuantity: false,
+            description: false,
         },
-        "border-radius": "8px",
-        ":focus": {
-          "background-color": "#e60000"
+        text: {
+            button: 'SHOP',
+            outOfStock: 'OUT OF STOCK',
+            unavailable: 'Unavailable',
         },
-        "font-weight": "bold"
-      },
-      "title": {
-        "font-size": "26px"
-      },
-      "price": {
-        "font-size": "18px"
-      },
-      "quantityInput": {
-        "font-size": "13px",
-        "padding-top": "14.5px",
-        "padding-bottom": "14.5px"
-      },
-      "compareAt": {
-        "font-size": "15px"
-      }
+        classes: {            
+            button: 'shopify-buy__btn home-catalogo-buy',            
+        },
     },
-    "googleFonts": [
-      "Roboto"
-    ]
-  },
-  "cart": {
-    "contents": {
-      "button": true
-    },
-    "styles": {
-      "button": {
-        "background-color": "#ff0000",
-        "font-family": "Roboto, sans-serif",
-        "font-size": "13px",
-        "padding-top": "14.5px",
-        "padding-bottom": "14.5px",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "8px",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "font-weight": "bold"
-      },
-      "footer": {
-        "background-color": "#ffffff"
-      }
-    },
-    "googleFonts": [
-      "Roboto"
-    ]
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "variantTitle": false,
-      "buttonWithQuantity": true,
-      "button": false,
-      "quantity": false
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "background-color": "#ff0000",
-        "font-family": "Roboto, sans-serif",
-        "font-size": "13px",
-        "padding-top": "14.5px",
-        "padding-bottom": "14.5px",
-        "padding-left": "px",
-        "padding-right": "px",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        "border-radius": "8px",
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "font-weight": "bold"
-      },
-      "quantityInput": {
-        "font-size": "13px",
-        "padding-top": "14.5px",
-        "padding-bottom": "14.5px"
-      }
-    },
-    "googleFonts": [
-      "Roboto"
-    ]
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "font-family": "Roboto, sans-serif",
-        "background-color": "#ff0000",
-        ":hover": {
-          "background-color": "#e60000"
-        },
-        ":focus": {
-          "background-color": "#e60000"
-        },
-        "font-weight": "bold"
-      },
-      "count": {
-        "font-size": "13px",
-        "color": "#ffffff",
-        ":hover": {
-          "color": "#ffffff"
-        }
-      },
-      "iconPath": {
-        "fill": "#ffffff"
-      }
-    },
-    "googleFonts": [
-      "Roboto"
-    ]
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  }
+    cart: {},
+    modal: {}, // configure the modal created by a product embed
+    productSet: {}, // configure a collection or set of products
+    toggle: {}, // configure the tab that toggles the cart open
+    modalProduct: {}, // configure the product within the modal
+    option: {}, // configure the variant option selectors within a product
+    lineItem: {}, // configure the individual line items within a cart
 }
-      });
-    });
-  }
-})();
-/*]]>*/
+
+//shopify
+ui.createComponent('product', {
+    id: 599055990839,
+    node: document.getElementById('buy-1'),
+    options: shop_options,    
+});
+
+//buy click
+// $('.home-catalogo-buy').click(function(e){
+//     $('.shopify-buy__btn').click();
+// });
 </script>
