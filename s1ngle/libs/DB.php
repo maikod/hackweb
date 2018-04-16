@@ -17,7 +17,7 @@ class DB
     var $host = "localhost";    
     var $user = "root";
     var $pass = "franci";
-    var $dbname = "brah";
+    var $dbname = "scrambler_db";
     //remote
     var $host2 = "62.149.150.193";     
     var $user2 = "Sql677570";
