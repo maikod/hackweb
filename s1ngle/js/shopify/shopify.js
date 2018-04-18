@@ -1,4 +1,41 @@
 //Shopify integration
+//variables
+var shop_options = {
+    product: {
+        iframe: false,
+        contents: {
+            img: false,
+            imgWithCarousel: false,
+            title: false,
+            variantTitle: false,
+            price: false,
+            options: false,
+            quantity: false,
+            quantityIncrement: false,
+            quantityDecrement: false,
+            quantityInput: false,
+            button: true,
+            buttonWithQuantity: false,
+            description: false,
+        },
+        text: {
+            button: 'SHOP',
+            outOfStock: 'OUT OF STOCK',
+            unavailable: 'Unavailable',
+        },
+        classes: {            
+            button: 'shopify-buy__btn home-catalogo-buy',            
+        },
+    },
+    cart: {},
+    modal: {}, // configure the modal created by a product embed
+    productSet: {}, // configure a collection or set of products
+    toggle: {}, // configure the tab that toggles the cart open
+    modalProduct: {}, // configure the product within the modal
+    option: {}, // configure the variant option selectors within a product
+    lineItem: {}, // configure the individual line items within a cart
+}
+
 
 // Fetching Products----------------------------------------------------------
 
@@ -16,8 +53,8 @@ function fetchProduct(id){
     productId = id.toString();
 
     client.product.fetch(productId).then((product) => {
-      // Do something with the product
-      console.log(product);
+        // Do something with the product
+        console.log(product);
     });
 }
 

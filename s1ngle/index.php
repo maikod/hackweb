@@ -106,7 +106,7 @@ include_once('libs/config.php');
 
 
 
-<body onresize="" style="" onload="">
+<body onresize="" style="" onload="" >
 
     <!-- include facebook sdk -->
     <!-- Load Facebook SDK for JavaScript -->
@@ -123,10 +123,10 @@ include_once('libs/config.php');
     <!-- facebook sdk end -->
 
 
-    <div id="main_page">        
+    <div id="main_page" >        
         <!-- Navbar
         ================================================== -->
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light" >
             <a class="navbar-brand" href="#">
                 <img src="img/logo2.png" alt="">
             </a>
@@ -174,13 +174,13 @@ include_once('libs/config.php');
         </div> -->
 
         <div class="blog-footer" style="text-align: center;">    
-            <!-- <div class="">2012-2018 © Simone Bramante. All Rights Reserved.<span style="color:#f9f9f9;"> // Made with <i class="fa fa-heart"></i> by <a style="color:#f9f9f9;" href="http://hackweb.it" target="_Blank">Frankie</a></span></div>            
+            <div class="" style="color:#fff;">2018 © s1ngle. All Rights Reserved.<br><span style="color:#fff; font-size:9px;">Made with <i class="fa fa-heart"></i> by <a style="color:#f9f9f9;" href="http://hackweb.it" target="_Blank">Frankie</a></span></div>            
             <div class="social-links">
 			    <a target="_blank" title="Instagram" href="http://instagram.com/brahmino"><i class="fa fa-instagram"></i></a>
                 <a target="_blank" title="Youtube" href="https://www.youtube.com/channel/UCjZqhF7UUC5yhMWe0e3WQsQ"><i class="fa fa-youtube"></i></a>
                 <a target="_blank" href="http://twitter.com/Brahmino"><i class="fa fa-twitter"></i></a>
                 <a target="_blank" href="https://www.facebook.com/Brahmino/"><i class="fa fa-facebook-official"></i></a>
-            </div> -->
+            </div>
         </div>
         <!-- /.footer -->
     </div>
