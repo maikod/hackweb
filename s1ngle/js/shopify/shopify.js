@@ -27,7 +27,16 @@ var shop_options = {
             button: 'shopify-buy__btn home-catalogo-buy',            
         },
     },
-    cart: {},
+    cart: {
+        styles: {
+            button: {
+                'color': 'red',
+                ':hover': {
+                    'color': 'orange'
+                }
+            }
+        }
+    },
     modal: {}, // configure the modal created by a product embed
     productSet: {}, // configure a collection or set of products
     toggle: {}, // configure the tab that toggles the cart open

@@ -270,7 +270,7 @@ ui.createComponent('product', {
 //accoppiatore buy
 $('.btn-accopiatore-buy').click(function(e){
     e.preventDefault();
-    $('.home-catalogo-buy').click();
+    $('.home-catalogo-buy', $('#buy-1')).click();
     return false;
 });
 
