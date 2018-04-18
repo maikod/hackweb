@@ -10,7 +10,7 @@
         
         <!-- accoppiatore -->
         <div class="home-accopiatore">
-            ACCOPIATORE DI S1NGLE
+            ACCOPPIATORE DI S1NGLE
         </div>
 
         <div>
@@ -86,9 +86,9 @@
 
             <div class="home-accopiatore-actions-container max-w">
                 <div class="home-accopiatore-actions">                
-                    <!-- <button type="button" class="btn btn-danger">MI PIACE... LA VOGLIO</button> -->
+                    <button type="button" class="btn btn-danger btn-accopiatore-buy">MI PIACE... LA VOGLIO</button>
                     <div id='product-component-32146857162'></div>
-                    <button type="button" class="btn btn-primary" style="background-color:#3b5998; border-color:#3b5998; margin-right:30px; font-family:avenir; font-size:13px; width:218px; padding-top: 12px; padding-bottom: 12px; border-radius: 8px;">CONDIVIDI LA TUA SCELTA</button>            
+                    <button type="button" class="btn btn-primary btn-accopiatore-share">CONDIVIDI LA TUA SCELTA</button>            
                 </div>
             </div>
 
@@ -265,6 +265,13 @@ ui.createComponent('product', {
     id: 599055990839,
     node: document.getElementById('buy-1'),
     options: shop_options,    
+});
+
+//accoppiatore buy
+$('.btn-accopiatore-buy').click(function(e){
+    e.preventDefault();
+    $('.home-catalogo-buy').click();
+    return false;
 });
 
 //buy click

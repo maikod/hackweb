@@ -12,3 +12,11 @@
     margin: 4px 2px; */
     cursor: pointer;
 }
+
+.btn-accopiatore-buy{
+    background-color: red;
+}
+
+.btn-accopiatore-share{
+    background-color: #3B5998;
+}
