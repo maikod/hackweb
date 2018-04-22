@@ -12,11 +12,22 @@
     margin: 4px 2px; */
     cursor: pointer;
 }
-
 .btn-accopiatore-buy{
     background-color: red;
+    display: none;
 }
-
 .btn-accopiatore-share{
     background-color: #3B5998;
+    display: none;
+}
+.buy-hidden{
+    display: none !important;
+}
+
+/* home generic */
+.home-accopiatore-actions{
+    min-height: 100px;
+}
+.home-header-2{
+    margin-top: 20px;
 }

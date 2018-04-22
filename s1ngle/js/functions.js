@@ -22,3 +22,5 @@ function getCookie(name) {
 function deleteCookie(name) {
     createCookie(name,"",-1);
 }
+
+function isOdd(num) { return num % 2;}

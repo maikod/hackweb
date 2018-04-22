@@ -30,16 +30,87 @@ var shop_options = {
     cart: {
         styles: {
             button: {
-                'color': 'red',
+                'color': 'white',
+                'background-color': 'red',
                 ':hover': {
-                    'color': 'orange'
+                    'color': 'white',
+                    'background-color': 'black',
+                }
+            }
+        }
+    },
+    toggle: {
+        styles: {
+            toggle: {
+                'color': 'white',
+                'background-color': 'red',
+                ':hover': {
+                    'color': 'white',
+                    'background-color': 'black',
                 }
             }
         }
     },
     modal: {}, // configure the modal created by a product embed
-    productSet: {}, // configure a collection or set of products
-    toggle: {}, // configure the tab that toggles the cart open
+    productSet: {}, // configure a collection or set of products    
+    modalProduct: {}, // configure the product within the modal
+    option: {}, // configure the variant option selectors within a product
+    lineItem: {}, // configure the individual line items within a cart
+}
+
+var shop_options_accoppiatore = {
+    product: {
+        iframe: false,
+        contents: {
+            img: false,
+            imgWithCarousel: false,
+            title: false,
+            variantTitle: false,
+            price: false,
+            options: false,
+            quantity: false,
+            quantityIncrement: false,
+            quantityDecrement: false,
+            quantityInput: false,
+            button: true,
+            buttonWithQuantity: false,
+            description: false,
+        },
+        text: {
+            button: 'SHOP',
+            outOfStock: 'OUT OF STOCK',
+            unavailable: 'Unavailable',
+        },
+        classes: {            
+            button: 'shopify-buy__btn home-accoppiatore-buy',            
+        },
+    },
+    cart: {
+        styles: {
+            button: {
+                'color': 'white',
+                'background-color': 'red',
+                ':hover': {
+                    'color': 'white',
+                    'background-color': 'black',
+                }
+            }
+        }
+    },
+    toggle: {
+        styles: {
+            toggle: {
+                'color': 'white',
+                'background-color': 'red',
+                ':hover': {
+                    'color': 'white',
+                    'background-color': 'black',
+                }
+            }
+        }
+    },
+    modal: {}, // configure the modal created by a product embed
+    productSet: {}, // configure a collection or set of products    
     modalProduct: {}, // configure the product within the modal
     option: {}, // configure the variant option selectors within a product
     lineItem: {}, // configure the individual line items within a cart
@@ -50,10 +121,11 @@ var shop_options = {
 
 // Fetch all products in your shop
 function fetchAllProduct(){
+      
     client.product.fetchAll().then((products) => {
         // Do something with the products
-        console.log(products);
-    });
+        console.log(products.it);
+    });    
 }
 
 
@@ -71,10 +143,12 @@ function fetchProduct(id){
 
 // Fetch all collections, including their products
 function fetchAllCollections(){
+    var deferred = $.Deferred();  
     client.collection.fetchAllWithProducts().then((collections) => {
-      // Do something with the collections
-      console.log(collections);
+      // Do something with the collections    
+      deferred.resolve(collections);  
     });
+    return deferred.promise();
 }
 
 // Fetch a single collection by ID, including its products

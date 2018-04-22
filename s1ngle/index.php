@@ -290,8 +290,6 @@ $(function() {
         }, 20000);
     }    
     
-    //shopify
-    fetchAllProduct();
 });
 
 $(window).on('load', function () {
