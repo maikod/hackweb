@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="description" content="hackweb">
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="http://www.hackweb.it/favicon.png" />
     <meta property="og:title" content="hackweb" />
     <meta property="og:description" content="hackweb"/>
     <meta property="og:site_name" content="hackweb"/>
@@ -15,8 +15,19 @@
 
     <!-- CSS personal -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> -->
 
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <!-- javascript -->
+    <!-- jquery -->
+    <script src="js/jquery/jquery-3.2.1.min.js"></script>
+
+    <!-- FRANKIE'S -->
+    <!-- <script src="js/custom.js" async defer></script>
+    <script src="js/general.js" async defer></script>
+    <script src="js/loadPage.js" async defer></script>
+    <script src="js/caricaFile2.js" async defer></script>
+    <script src="js/typewriter.js"async defer></script> -->
+    <!-- End javascript -->
 
 </head>
 
@@ -34,14 +45,3 @@
         </div>
     </div>
 </body>
-
-<!-- javascript -->
-<!-- jquery -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-<!-- FRANKIE'S -->
-<script src="js/custom.js"></script>
-<script src="js/general.js"></script>
-<script src="js/loadPage.js"></script>
-<script src="js/caricaFile2.js"></script>
-<script src="js/typewriter.js"></script>

@@ -11,10 +11,11 @@ i campi con * sono obbligatori.
             <legend><span style="color:#00FF00">modulo richiesta assistenza</span></legend>
 
             <form name="form1" id="form1" ><input type="hidden" id="form" name="form" value="1">
-            <p>nome*<br>
-              <input type="text" name="nome" id="nome" ><br>cognome<br><input type="text" name="cognome" id="cognome"><br>
-              mail*<br>
-              <input name="mail" type="text" id="mail" ><br>telefono<br><input type="text" name="telefono" id="telefono"><br><br>
+            <p>
+                nome*<br>
+                <input type="text" name="nome" id="nome" ><br>cognome<br><input type="text" name="cognome" id="cognome"><br>
+                mail*<br>
+                <input name="mail" type="text" id="mail" ><br>telefono<br><input type="text" name="telefono" id="telefono"><br><br>
                 urgenza*<br>
                 <input type="radio" name="urgenza" value="1" id="urgenza_0">normale<br>
                 <input type="radio" name="urgenza" value="2" id="urgenza_1">abbastanza urgente<br>

@@ -11,7 +11,7 @@
 	<ul id="main_menu">
         <?php
         //inizio della sessione
-		session_start();
+		@session_start();
 		
         require_once("../security/security.php");
         if(isset($_SESSION['user']) || isset($_COOKIE[md5('user')])){
@@ -60,8 +60,9 @@
 
 <script>
 //pulsanti menu
-$('.button-menu').click(function(ev) {
-    $('#content').load($(this).attr('href'));
-    ev.preventDefault();
+$('.button-menu').click(function(e) {
+	e.preventDefault();
+    $('#content').load($(this).attr('href'));    
+	return false;
 });
 </script>
