@@ -1,3 +1,35 @@
+
+//variabili globali
+var timeout = 0;
+var pagina = '';
+var utente = '';
+var potere = 0;
+var avatar = 'avatar_base.png';
+var informazioni = 'Version 5.0<br>© hackweb, Riccione / Bologna 2002 - 2018';
+var clockInterval;
+var clock;
+
+//funzioni
+function clock($el){	
+	// console.log("tic");
+	var data = new Date();	
+	var h = data.getHours();
+	var m = data.getMinutes();
+	var s = data.getSeconds();
+
+	if(h <= 9){
+		h = "0"+h;
+	}
+	if(s <= 9){
+		s = "0"+s;
+	}
+	if(m <= 9){
+		m = "0"+m;
+	}	
+	$el.html(data.getDate()+"/"+(data.getMonth()+1)+"/"+data.getFullYear()+" - "+h+":"+m+":"+s);	
+}
+
+
 // JavaScript Document
 $(function() {
 	

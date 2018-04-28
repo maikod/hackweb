@@ -1,17 +1,18 @@
 <?php
+//inizializzazione
 @session_start();
+setcookie("privacy", 'display:none;', time()+7776000);  
+
+//variables
+$protocol = 'https';
+$params = array();
 
 //funzione che carica automaticamente le classi
 function __autoload($nome_classe){
     require_once 'lib/' . $nome_classe . '.php';
 }
 
-setcookie("privacy", 'display:none;', time()+7776000);  
-
-//variables
-$protocol = 'https';
-
-if(@$_SERVER["HTTPS"] != "on" && $_SERVER['SERVER_NAME'] != '10.0.39.176' && $_SERVER['SERVER_NAME'] != '127.0.0.1')
+if(@$_SERVER["HTTPS"] != "on" && $_SERVER['SERVER_NAME'] != '::1' && $_SERVER['SERVER_NAME'] != '127.0.0.1' && $_SERVER['SERVER_NAME'] != '192.168.1.110' && $_SERVER['SERVER_NAME'] != 'localhost' && $_SERVER['SERVER_NAME'] != '10.0.39.176')
 {
     header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
     exit();
@@ -38,8 +39,8 @@ function Get_IP() {
     return $ipaddress;
 }
 
-
-@$params = explode( "/", $_GET['params'] );
+//params read
+if(isset($_GET['params'])) $params = explode( "/", $_GET['params'] );
 if(@$params[0] == 'immagini' || @$params[0] == 'js' || @$params[0] == 'css' || @$params[0] == 'img' || @$params[0] == 'libs' || @$params[0] == 'files') exit;
 
 if(@$params[0] == 'include') 
@@ -51,31 +52,41 @@ if(@$params[0] == 'include')
             PAGE NOT FOUND
             '.$_GET['params'].'
         </div>
-    </div>
-    
-    <script>
-        document.location.href = "https://scramblerducati.com/v1/'.$_SESSION['lang'].'/'.$var[0].'";
-    </script>
+    </div>        
     ';
-    // header("Location: https://google.com/v1/" . $_SERVER["REQUEST_URI"]);    
+    // http_response_code(404);
+    // die();    
     exit(0);
 }
 
+//constants and important variables
 define('HOST', explode('/', $_SERVER['REQUEST_URI'])[1]);
-$_SESSION['HOST'] = ($_SERVER['SERVER_NAME'] == '10.0.39.176' || $_SERVER['SERVER_NAME'] == '127.0.0.1') ? '/'.HOST.'/' : '/';
+echo $_SERVER['REQUEST_URI'];
+$_SESSION['HOST'] = ($_SERVER['SERVER_NAME'] == '10.0.39.176' || $_SERVER['SERVER_NAME'] == '127.0.0.1') ? '/'.HOST : '';
+$base_host = $_SESSION['HOST'].'/';
 $link = ($_SERVER['SERVER_NAME'] == '::1') ? 'localhost' : $_SERVER['SERVER_NAME'];
-$_SESSION['full_link'] = $protocol.'://'.$link.$_SESSION['HOST'];
+$full_link = $protocol.'://'.$link.$_SESSION['HOST'];
+$_SESSION['full_link'] = $full_link;
+//canonical
+$canonical = rtrim($_SESSION['full_link'],'/');
+for($i=0;$i<count($params);$i++) $canonical .= "/".$params[$i];
+$_SESSION['canonical'] = $canonical;
+//params
 $_SESSION['params'] = @$params;
 
-$_SESSION['USER_IP']=Get_IP();
+//user ip
+$ip = Get_IP();
+$_SESSION['USER_IP'] = $ip;
 $ctx = stream_context_create(array('http'=>
     array(
         'timeout' => 3,  //1200 Seconds is 20 Minutes
     )
 ));
+
+//geolocation by ip
 //$geolocation = json_decode(file_get_contents('http://pro.ip-api.com/json/'.$_SESSION['USER_IP'].'?key=WdYJbc0rtoQIjXE',false,$ctx)); //old service
-@$geolocation = json_decode(file_get_contents('http://freegeoip.net/json/'.$_SESSION['USER_IP'].'',false,$ctx));
-$_SESSION['countryCode']=(isset($geolocation->country_code))? strtolower($geolocation->country_code) : false;
+// @$geolocation = json_decode(file_get_contents('http://freegeoip.net/json/'.$_SESSION['USER_IP'].'',false,$ctx));
+// $_SESSION['countryCode']=(isset($geolocation->country_code))? strtolower($geolocation->country_code) : false;
 
 //setting manual countrycode
 @$market = explode( "market=", @$_GET['params'] );
@@ -89,23 +100,16 @@ if(isset($pw[1])){
     $_SESSION['pw'] = $pw[1];
 }
 
+//language
 $lang = ($_SESSION['countryCode'] == false) ? 'en' : $_SESSION['countryCode'];
 
 if(!@$params[0]) @$params[0] = '__';
 
 $_SESSION['lang'] = (@$params[0] == '__') ? $lang : @$params[0];
 
-if(
-    $_SESSION['lang'] != 'en' && $_SESSION['lang'] != 'it' && $_SESSION['lang'] != 'jp' 
-    && $_SESSION['lang'] != 'de' && $_SESSION['lang'] != 'fr' && $_SESSION['lang'] != 'es' 
-    && $_SESSION['lang'] != 'pt'
-    ){    
-    header('Location: '.$_SESSION['full_link'].'en');    
+if($_SESSION['lang'] != 'en' && $_SESSION['lang'] != 'it'){    
+    header('Location: '.$_SESSION['full_link'].'/it');    
     exit;
-}
-
-if($_SESSION['countryCode'] == 'br' || $_SESSION['countryCode'] == 'in'){
-    // header('Location: https://scramblerducati.com/v1/');
 }
 
 $connection = "ADMIN.php";

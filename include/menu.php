@@ -61,7 +61,7 @@
 <script>
 //pulsanti menu
 $('.button-menu').click(function(e) {
-	e.preventDefault();
+	e.preventDefault();	
     $('#content').load($(this).attr('href'));    
 	return false;
 });

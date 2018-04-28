@@ -1,23 +1,19 @@
-<?php
-//recupero indirizzo web dell'utente
-$ip = Get_IP();
-
-?>
-
 <!DOCTYPE html>
-<html lang="<?php echo $_SESSION['lang']; ?>">
+<html lang="<?php echo $lang; ?>">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="description" content="hackweb">
-    <meta property="og:image" content="http://www.hackweb.it/favicon.png" />
+    <meta property="og:image" content="<?php echo $full_link; ?>" />
     <meta property="og:title" content="hackweb" />
     <meta property="og:description" content="hackweb"/>
     <meta property="og:site_name" content="hackweb"/>
     <meta property="og:type" content="website"/>    
     <link rel="icon" type="image/png" href="favicon.png"/>
-    <base href="">
+    <link rel="alternate" hreflang="<?php echo $lang; ?>" href="<?php echo $canonical; ?>" />
+    <link id="canonical" rel="canonical" href="<?php echo $canonical; ?>" /> 
+    <base href="<?php echo $base_host; ?>">
     <title>hackweb</title>
     
     <!-- CSS -->
@@ -26,22 +22,11 @@ $ip = Get_IP();
 
     <!-- Javascript -->
     <script src="js/jquery/jquery-3.2.1.min.js"></script>     
-    <script src="js/custom.js" async defer></script>
-    <script src="js/functions.js" async defer></script>
-    <script src="js/general.js" async defer></script>
+    <script src="js/custom.js"></script>    
+    <!-- <script src="js/general.js" async defer></script>
     <script src="js/loadPage.js" async defer></script>
     <script src="js/caricaFile2.js" async defer></script>
-    <script src="js/typewriter.js" async defer></script>    
-
-    <script>
-        //variabili globali
-        var timeout = 0;
-        var pagina = '';
-        var utente = '';
-        var potere = 0;
-        var avatar = 'avatar_base.png';
-        var informazioni = 'Version 5.0<br>© hackweb, Riccione / Bologna 2002 - 2018';
-    </script>
+    <script src="js/typewriter.js" async defer></script>     -->
     <!-- End Javascript -->
 </head>
 
@@ -51,7 +36,7 @@ $ip = Get_IP();
     <div align="center" style="margin-top:5px" id="pagina">
 
         <div id="logo" style="">
-            <img src="images/logo.png" style="width:100%;">
+            <img src="images/logo.png" style="width:100%; max-width:900px;">
         </div>
 
 
@@ -61,15 +46,11 @@ $ip = Get_IP();
                 <div id="menu"></div>
             </div>            
 
-            <!-- barra alta -->
-            <div class="col-cent" style="background-color:#272727;">
-                <div style="padding-top: 5px; padding-bottom: 5px;" class="logincell" id="barra-sopra"></div>
-            </div>
-
             <!-- colonna destra -->
-            <div class="col-dx" style="background-color:#272727;">
+            <div class="col-dx">
                 <div class="logincell">Ultimi utenti iscritti:</div> 
                 <div class="table-dx">
+                    
                     <?php
                     // $conn = mysql_connect("62.149.150.193","Sql677570","0aae578b");
                     // mysql_select_db("Sql677570_5");
@@ -86,15 +67,20 @@ $ip = Get_IP();
                     ?>
                 </div>
                 <div class="logincell">Sezione visitatore:</div>
-                <div>
-                    <?php
-                    echo "Your IP address is:<br /> <span style=\"color:#00FF00\">$ip</span>";
-                    ?>
+                <div class="table-dx">
+                    <div class="details">
+                        <?php
+                        echo "Your IP address is:<br /> <span style=\"color:#00FF00\">$ip</span>";
+                        ?>
+                    </div>                
+                    <div class="space"></div>
+                    <div class="details">
+                        visitatore #
+                        <?php include('include/visite.php'); ?>
+                    </div>
                 </div>
-                <div>
-                    visitatore #<?php //include('include/visite.php'); ?>
-                </div>
-                <div id="fascia-news">
+                <div class="logincell">News:</div>
+                <div id="fascia-news" class="table-dx">
                     <!--<span class="style2">
                     <span class="style4">
                     NEWS:</span></span>
@@ -105,10 +91,17 @@ $ip = Get_IP();
                     </div>-->
                 </div>
             </div>
+            <!-- End colonna destra -->
+
+            <!-- barra alta -->
+            <div class="col-cent top">
+                <div class="logincell" id="barra-sopra"></div>
+            </div>            
 
             <!-- contenuto -->
-            <div class="col-cent" style="background-color:#272727;">
-                <div align="center" class="cell" id="content"></div>
+            <div class="col-cent main" style="">
+                <div align="center" class="cell" id="content">                    
+                </div>
             </div>
             
         </div>
@@ -117,10 +110,14 @@ $ip = Get_IP();
     <script>
         //script finali
         $(document).ready(function(e) {
-            $('#content').load('include/assistenza.php');
+            $('#content').load('include/home.php');
             $('#barra-sopra').load('include/admin.php');
             $('#menu').load('include/menu.php');
             $('#fascia-news').load('./include/news.php');
+                        
+            clockInterval = setInterval(function(){                
+                clock($('#clock'));  
+            },1000);                                                  
         });
     </script>
 </body>
