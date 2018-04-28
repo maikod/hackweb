@@ -8,7 +8,7 @@ body {
 	background : #000;
 	color : #888;	
 	font-family: 'Source Code Pro', Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 11px;
 	text-align: center;	
 	vertical-align: middle;
 }
@@ -20,6 +20,11 @@ hr{
     border-top:1px dashed #888;
     color:#888;    
     height:0px;    
+}
+
+input{
+    background-color: #fff;
+    border: none;
 }
 
 #struttura{
@@ -47,7 +52,6 @@ hr{
 }
 
 .table-dx{
-    width: 100%;
     background-color:#272727;
     border-radius: 4px;
     margin-bottom: 5px;
@@ -226,11 +230,13 @@ a:link {
     }
 }
 
-@media screen and (max-width: 480px) {
-    body {
-        background: black;
+@media screen and (max-width: 450px) {
+
+    #logo img{
+        min-width: 200%;
+        transform: translateX(-25%);
     }
-    
+
     #struttura{
         width: 100%;
         word-wrap: break-word;
@@ -238,14 +244,15 @@ a:link {
     
     #col-menu{
         /* width: 20%; */
+        display: none;
     }
 
     .col-cent{
-        /* width: 50%;    */
+        width: 100%;   
     }
 
     .col-dx{
-        /* width: 20%; */
+        display: none;
     }
     
     #form1 input[type=text]{
