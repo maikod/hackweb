@@ -13,7 +13,7 @@ function visite(){
 		$file = fopen('header/visite.txt', 'w');
 		fwrite($file, $file_letto);
 		fclose($file);
-		$_SESSION['visite'] = new Date();
+		$_SESSION['visite'] = date("Y-m-d h:i:sa");
 	}
 
 	$visite = $file_letto;

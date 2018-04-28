@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" href="favicon.png"/>
     <link rel="alternate" hreflang="<?php echo $lang; ?>" href="<?php echo $canonical; ?>" />
     <link id="canonical" rel="canonical" href="<?php echo $canonical; ?>" /> 
-    <base href="<?php echo $base_host; ?>">
+    <base href="<?php echo HOST; ?>">
     <title>hackweb</title>
     
     <!-- CSS -->

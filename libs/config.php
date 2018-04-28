@@ -2,6 +2,7 @@
 //inizializzazione
 @session_start();
 setcookie("privacy", 'display:none;', time()+7776000);  
+// print_r($_SERVER);
 
 //variables
 $protocol = 'https';
@@ -9,10 +10,10 @@ $params = array();
 
 //funzione che carica automaticamente le classi
 function __autoload($nome_classe){
-    require_once 'lib/' . $nome_classe . '.php';
+    require_once 'libs/' . $nome_classe . '.php';
 }
 
-if(@$_SERVER["HTTPS"] != "on" && $_SERVER['SERVER_NAME'] != '::1' && $_SERVER['SERVER_NAME'] != '127.0.0.1' && $_SERVER['SERVER_NAME'] != '192.168.1.110' && $_SERVER['SERVER_NAME'] != 'localhost' && $_SERVER['SERVER_NAME'] != '10.0.39.176')
+if(!isset($_SERVER["HTTPS"]) && $_SERVER['HTTP_HOST'] != '10.0.39.176' && $_SERVER['HTTP_HOST'] != '127.0.0.1' && $_SERVER['HTTP_HOST'] != 'localhost' )
 {
     header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
     exit();
@@ -60,15 +61,16 @@ if(@$params[0] == 'include')
 }
 
 //constants and important variables
-define('HOST', explode('/', $_SERVER['REQUEST_URI'])[1]);
-echo $_SERVER['REQUEST_URI'];
-$_SESSION['HOST'] = ($_SERVER['SERVER_NAME'] == '10.0.39.176' || $_SERVER['SERVER_NAME'] == '127.0.0.1') ? '/'.HOST : '';
-$base_host = $_SESSION['HOST'].'/';
-$link = ($_SERVER['SERVER_NAME'] == '::1') ? 'localhost' : $_SERVER['SERVER_NAME'];
-$full_link = $protocol.'://'.$link.$_SESSION['HOST'];
+// define('HOST', explode('/', $_SERVER['REQUEST_URI'])[1]);
+// $_SESSION['HOST'] = ($_SERVER['SERVER_NAME'] == '10.0.39.176' || $_SERVER['SERVER_NAME'] == '127.0.0.1') ? '/'.HOST : '';
+// $link = ($_SERVER['SERVER_NAME'] == '::1') ? 'localhost' : $_SERVER['SERVER_NAME'];
+define('HOST', str_replace("index.php", "", $_SERVER['SCRIPT_NAME']));
+$_SESSION['HOST'] = HOST;
+$link = $_SERVER['HTTP_HOST'];
+$full_link = $protocol.'://'.$link.HOST;
 $_SESSION['full_link'] = $full_link;
 //canonical
-$canonical = rtrim($_SESSION['full_link'],'/');
+$canonical = rtrim($full_link,'/');
 for($i=0;$i<count($params);$i++) $canonical .= "/".$params[$i];
 $_SESSION['canonical'] = $canonical;
 //params
@@ -101,7 +103,7 @@ if(isset($pw[1])){
 }
 
 //language
-$lang = ($_SESSION['countryCode'] == false) ? 'en' : $_SESSION['countryCode'];
+$lang = (!isset($_SESSION['countryCode'])) ? 'en' : $_SESSION['countryCode'];
 
 if(!@$params[0]) @$params[0] = '__';
 
@@ -117,8 +119,4 @@ require_once($connection);
 
 $acc = new ADMIN;
 $result = $acc->checkLogin();
-
-// echo $_SERVER['HTTP_HOST'];
-// echo $_SERVER['REMOTE_ADDR'];
-// echo $_SERVER['SERVER_NAME'];
 ?>
