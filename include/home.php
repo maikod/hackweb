@@ -7,7 +7,7 @@
 </style>
 
 <hr>
-<span class="Stile2" style="font-family:Verdana;">h@ckweb</span><br>
+<span class="Stile2" style="">h@ckweb</span><br>
 Founded: 10/01/1996
 <hr>
 <br>  

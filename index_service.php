@@ -17,7 +17,7 @@
     <title>hackweb</title>
     
     <!-- CSS -->
-    <link href="css/style.css" rel="stylesheet" type="text/css" />    
+    <link href="css/style.css?v=0.001" rel="stylesheet" type="text/css" />    
     <!-- End CSS -->
 
     <!-- Javascript -->
