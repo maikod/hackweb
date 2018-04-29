@@ -46,8 +46,6 @@ function startVideo(){
 }
 
 
-
-// JavaScript Document
 $(function() {
 	
 	//collegamento allo scorrimento della pagina
