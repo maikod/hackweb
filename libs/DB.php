@@ -17,18 +17,19 @@ class DB
     var $host = "localhost";    
     var $user = "root";
     var $pass = "franci";
-    var $dbname = "scrambler_db";
+    var $dbname = "hackweb";
     //remote
-    var $host2 = "localhost";     
-    var $user2 = "dbuser";
-    var $pass2 = "xz0z7S~2";
-    var $dbname2 = "scrambler_db";    
+    var $host2 = "62.149.150.193";     
+    var $user2 = "Sql677570";
+    var $pass2 = "0aae578b";
+    var $dbname2 = "Sql677570_5";    
 
     var $whitelist = array(
         'localhost',
         '127.0.0.1',
         '::1',
         '192.168.1.104',
+        '192.168.1.100',
         '10.0.39.176'        
     );
 

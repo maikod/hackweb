@@ -22,7 +22,7 @@
 
     <!-- Javascript -->
     <script src="js/jquery/jquery-3.2.1.min.js"></script>     
-    <script src="js/custom.js"></script>    
+    <script src="js/custom.js?v=0.001"></script>    
     <!-- <script src="js/general.js" async defer></script>
     <script src="js/loadPage.js" async defer></script>
     <script src="js/caricaFile2.js" async defer></script>
@@ -113,7 +113,7 @@
             $('#content').load('include/home.php');
             $('#barra-sopra').load('include/admin.php');
             $('#menu').load('include/menu.php');
-            $('#fascia-news').load('./include/news.php');
+            $('#fascia-news').load('include/news.php');
                         
             clockInterval = setInterval(function(){                
                 clock($('#clock'));  

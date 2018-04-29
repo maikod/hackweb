@@ -8,12 +8,12 @@
         <div>* = facoltativo</div>
         
         <form class="forms" name="form2" id="form2">
-            <label for="textfield">nick:<br>
+            <label for="textfield">username:<br>
             </label>
             <input name="nick" type="text" class="style1" id="textfield" />
             <br>
             <label></label>
-            <label for="label2">pass:<br>
+            <label for="label2">password:<br>
             </label>
             <input name="pwd" type="password" class="style1" id="label2" />
             <br>
