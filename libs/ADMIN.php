@@ -26,6 +26,7 @@ class ADMIN extends DB
 
     function login($data){
         $data->password = md5($data->password);
+        $ric = $data->ric;
         $sess_id = rand();
         // $this->sql_open();
         $db = $this->conn;
