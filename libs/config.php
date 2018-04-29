@@ -13,7 +13,7 @@ function __autoload($nome_classe){
     require_once 'libs/' . $nome_classe . '.php';
 }
 
-if(!isset($_SERVER["HTTPS"]) && $_SERVER['HTTP_HOST'] != '10.0.39.176' && $_SERVER['HTTP_HOST'] != '127.0.0.1' && $_SERVER['HTTP_HOST'] != 'localhost' )
+if(!isset($_SERVER["HTTPS"]) && $_SERVER['HTTP_HOST'] != '10.0.39.176' && $_SERVER['HTTP_HOST'] != '127.0.0.1' && $_SERVER['HTTP_HOST'] != 'localhost' && $_SERVER['HTTP_HOST'] != '192.168.1.100')
 {
     header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
     exit();

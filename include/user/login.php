@@ -1,38 +1,34 @@
----------------------------------------<br />
-inserisci nome utente e password:<br />
----------------------------------------<br />
-<br />
+<hr>
+inserisci nome utente e password:<br>
+<hr>
+<br>
 
 <div class="formsDiv" align="center">
-    <table>
-    <tr>
-    <td>
-        <div align="left">
-            <form class="forms" name="form3" id="form3">
-                <label>username:<br />
-                <input name="username" type="text"  id="username" />
-                </label>
-                <br />
-                <label>password:<br />
-                <input name="password" type="password" id="password" />
-                <br />
-                </label>
-                <label>
-                <div align="center">
-                  <input name="ricordami" type="checkbox" id="ricordami" value="ric" />
-                  ricordami</div>
-                </label>
-                <br />
-                <label>
-                <div align="center">
-                  <input name="Submit" type="submit" class="style1" value="login" />
-                </div>
-                </label>
-            </form>
-        </div>
-    </td>
-    </tr>
-    </table>
+    
+    <div align="left">
+        <form class="forms" name="form3" id="form3">
+            <label>username:<br>
+            <input name="username" type="text"  id="username" />
+            </label>
+            <br>
+            <label>password:<br>
+            <input name="password" type="password" id="password" />
+            <br>
+            </label>
+            <label>
+            <div align="center">
+                <input name="ricordami" type="checkbox" id="ricordami" value="ric" />
+                ricordami</div>
+            </label>
+            <br>
+            <label>
+            <div align="center">
+                <input name="Submit" type="submit" class="style1" value="login" />
+            </div>
+            </label>
+        </form>
+    </div>
+
 </div>
 
 <script type="text/javascript">		

@@ -2,7 +2,7 @@
 <div id="menu_block">
 	<ul id="main_menu">
 		<li><a class="button-menu" href="include/home.php">home</a></li>
-        <li><a class="button-menu" href="include/assistenza.php">richieste lavoro</a></li>
+        <!-- <li><a class="button-menu" href="include/assistenza.php">richieste lavoro</a></li> -->
 	</ul>
 </div>
 <br>

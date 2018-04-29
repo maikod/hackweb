@@ -1,44 +1,41 @@
  completa il form:
 
-<br />
+<br>
 <div align="center" class="formsDiv">
-    <table>
-    <tr>
-    <td>
-        <div align="left">
-            <div>* = facoltativo</div>
-            <br />
-            <form class="forms" name="form2" id="form2">
-                <label for="textfield">nick:<br />
-                </label>
-                <input name="nick" type="text" class="style1" id="textfield" />
-                <br />
-                <label></label>
-                <label for="label2">pass:<br />
-                </label>
-                <input name="pwd" type="password" class="style1" id="label2" />
-                <br />
-                <label for="label3">confirm:</label>
-                <br />
-                <input name="pwd2" type="password" class="style1" id="label3" />
-                <br />
-                <label for="label"> mail:</label>
-                <br />
-                <input name="mail" type="text" class="style1" id="label" />
-                <br />
-                <label></label>
-                <label>*lascia un messaggio:
-                <textarea name="object" class="style1"></textarea>
-                </label>
-                <br />
-                <input name="send" type="submit" class="style1" value="send" />
-                <input name="clear" type="reset" class="style1" value="clear" />
-                <br />
-            </form>
-        </div>
-    </td>
-    </tr>
-    </table>
+
+    <div align="left">
+        <br>
+        <div>* = facoltativo</div>
+        
+        <form class="forms" name="form2" id="form2">
+            <label for="textfield">nick:<br>
+            </label>
+            <input name="nick" type="text" class="style1" id="textfield" />
+            <br>
+            <label></label>
+            <label for="label2">pass:<br>
+            </label>
+            <input name="pwd" type="password" class="style1" id="label2" />
+            <br>
+            <label for="label3">confirm:</label>
+            <br>
+            <input name="pwd2" type="password" class="style1" id="label3" />
+            <br>
+            <label for="label"> mail:</label>
+            <br>
+            <input name="mail" type="text" class="style1" id="label" />
+            <br>
+            <label></label>
+            <label>*lascia un messaggio:
+            <textarea name="object" class="style1"></textarea>
+            </label>
+            <br>
+            <input name="send" type="submit" class="style1" value="send" />
+            <input name="clear" type="reset" class="style1" value="clear" />
+            <br>
+        </form>
+    </div>
+
 </div>    
        
 <script type="text/javascript">		

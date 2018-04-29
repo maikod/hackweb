@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
+
+/* COLORI */
+.color-1{
+    color: #4885ed;
+}
+.stilo1 {color: #4885ed}
+.d_index2 {font-size: 14px}
+.stilo3 {color: #4885ed; font-size: 18px; }
+.stilo5 {color: #4885ed; font-size: 16px; }
+.Stile2 {color: #4885ed; font-size: 14px; }
+
 html {
     height: 100%;
 }
 
 body {
-	background : #000;
-	color : #888;	
+	background : #efefef;
+	color : #000;	
 	font-family: 'Source Code Pro', Verdana, Arial, Helvetica, sans-serif;
 	font-size: 11px;
 	text-align: center;	
@@ -17,14 +28,20 @@ hr{
     background-color: transparent;    
     width: 40%;
     border:none;
-    border-top:1px dashed #888;
-    color:#888;    
+    border-top:1px dashed #000;
+    color:#000;    
     height:0px;    
 }
 
-input{
-    background-color: #fff;
+input, textarea{
+    background-color: #efefef;
+    color: #000000;
     border: none;
+}
+
+#pagina{
+    max-width: 100%;
+    overflow: hidden;
 }
 
 #struttura{
@@ -43,7 +60,7 @@ input{
     border-radius: 4px; 
 }
 .col-cent.main{    
-    background-color:#272727;    
+    background-color:#fff;    
 }
 
 .col-dx{
@@ -52,7 +69,7 @@ input{
 }
 
 .table-dx{
-    background-color:#272727;
+    background-color:#fff;
     border-radius: 4px;
     margin-bottom: 5px;
     min-height: 12px;
@@ -77,8 +94,8 @@ input{
 #menu_block #main_menu li a{
 	display: block;
 	padding: 5px;
-	color: #CCCCCC;
-	background-color: #272727;
+	color: #000;
+	background-color: #fff;
 	text-decoration: none;
 	margin-top: 0px;
 	margin-right: 0px;
@@ -87,47 +104,50 @@ input{
 	border-radius: 4px;
 }
 #menu_block #main_menu li a:hover{
-	background-color: #2f3d51;
+    /* background-color: #4885ed; */
+    color: #4885ed
 }
 .logincell {		
 	padding: 2px;
-    color: #00FF00;
+    color: #4885ed;
     margin-bottom: 5px;
 }
 
 
 .xfr1 {
 	font-size: 11px;
-	color: #000000;
+	color: #efefefefefef;
 }
 a:visited {
 	color: #009900;
 }
 a:link {
-	color: #00FF00;
+	color: #4885ed;
 }
 .style2 {
 	font-size: 10;
-	color: #00FF00;
+	color: #4885ed;
 	border-color: #999999;
 }
 .style4 {
-	color: #00FF00;
+	color: #4885ed;
 	font-size: 16px;
 	font-weight: bold;
 }
 .hack_menu {
-	color: #00FF00;
+	color: #4885ed;
 }
 .style7 {
 	font-size: 11px;
-	color: #00FF00;
+	color: #4885ed;
 }
 
 .tab-pratiche{
 	border: 1px groove #ffffff;
 	padding: 3px;
 }
+
+
 
 /* home
 --------------------------------------------------------------- */
@@ -184,51 +204,6 @@ a:link {
 
 /* RESPONSIVE
 --------------------------------------------------------------- */
-@media screen and (max-width: 1300px) {
-    body {
-        background: black;
-    }
-    
-    #struttura{
-        width: 65%;
-        word-wrap: break-word;        
-    }
-    
-    #col-menu{
-        /* width: 10%; */
-    }
-
-    .col-cent{
-        /* width: 50%;    */
-    }
-
-    .col-dx{
-        /* width: 14%; */
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    body {
-        background: black;
-    }
-    
-    #struttura{
-        width: 100%;
-        word-wrap: break-word;
-    }
-    
-    #col-menu{
-        /* width: 20%; */
-    }
-
-    .col-cent{
-        /* width: 60%;    */
-    }
-
-    .col-dx{
-        /* width: 20%; */
-    }
-}
 
 @media screen and (max-width: 450px) {
 
@@ -291,29 +266,5 @@ a:link {
 
     .forms textarea{
         width: 95%;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    body {
-        background: black;
-    }
-    
-    #struttura{
-        width: 100%;
-        word-wrap: break-word;
-    }
-    
-    #col-menu{
-        /* width: 18%; */
-    }
-
-    .col-cent{
-        /* width: 50%;    */
-    }
-
-    .col-dx{
-        /* width: 20%; */
-        /* display: none; */
     }
 }

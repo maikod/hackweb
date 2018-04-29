@@ -33,7 +33,7 @@ function visite(){
 	// }
 	// $acc->sql_close();
 
-	echo("<span style=\"color:#00FF00;\">$visite</span>");
+	echo("<span class=\"color-1\">$visite</span>");
 }
 
 visite();

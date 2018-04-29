@@ -1,9 +1,5 @@
 <style type="text/css">
-.stilo1 {color: #00FF00}
-.d_index2 {font-size: 14px}
-.stilo3 {color: #00FF00; font-size: 18px; }
-.stilo5 {color: #00FF00; font-size: 16px; }
-.Stile2 {color: #00FF00; font-size: 14px; }
+
 </style>
 
 <hr>
@@ -12,9 +8,10 @@ Founded: 10/01/1996
 <hr>
 <br>  
 <span class="stilo3">SHARING THE KNOWLEDGE</span>
-<br><p>Ciao sono <span style="color: #0F0";>Frankie</span>, faccio il programmatore e mi occupo di informatica.<br>Ho sempre passato molto tempo ad aggiustare computer,<br>
+<br>
+<p>Ciao sono <span class="color-1">Frankie</span>, faccio il programmatore e mi occupo di informatica.<br>Ho sempre passato molto tempo ad aggiustare computer,<br>
   fornire assistenza/consulenza informatica, configurare reti di vario genere, ecc...</p>
-<p>Di seguito sono elencate le mie <span style="color: #0F0";>competenze</span>:</p>
+<p>Di seguito sono elencate le mie <span class="color-1">competenze</span>:</p>
 <div id="list-home">
   - Programmazione in C, C++, php, javascript, AJAX, java, Objective C, Swift, C#, Angular...<br>
   - Aggiustare computer con qualsiasi problema<br>

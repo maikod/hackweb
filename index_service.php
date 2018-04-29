@@ -70,7 +70,7 @@
                 <div class="table-dx">
                     <div class="details">
                         <?php
-                        echo "Your IP address is:<br /> <span style=\"color:#00FF00\">$ip</span>";
+                        echo "Your IP address is:<br /> <span class=\"color-1\">$ip</span>";
                         ?>
                     </div>                
                     <div class="space"></div>

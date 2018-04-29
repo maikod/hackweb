@@ -6,28 +6,28 @@ i campi con * sono obbligatori.
 </p>
 
 <div id="assistenza" align="center">
-    <table><tr><td>
-        <div align="left">
-            <legend><span style="color:#00FF00">modulo richiesta assistenza</span></legend>
 
-            <form name="form1" id="form1" ><input type="hidden" id="form" name="form" value="1">
-            <p>
-                nome*<br>
-                <input type="text" name="nome" id="nome" ><br>cognome<br><input type="text" name="cognome" id="cognome"><br>
-                mail*<br>
-                <input name="mail" type="text" id="mail" ><br>telefono<br><input type="text" name="telefono" id="telefono"><br><br>
-                urgenza*<br>
-                <input type="radio" name="urgenza" value="1" id="urgenza_0">normale<br>
-                <input type="radio" name="urgenza" value="2" id="urgenza_1">abbastanza urgente<br>
-                <input type="radio" name="urgenza" value="3" id="urgenza_2">questione di vita o di morte<br>
-                <br>
-                        tipo di richiesta*<br>
-                        <input type="text" name="tipo_richiesta" id="tipo_richiesta">	<br>
-                        descrizione della richiesta*<br>
-                        <textarea name="descrizione_richiesta" id="descrizione_richiesta" rows="5"></textarea><br><br>	<input type="submit" name="invia" id="invia" value="invia">
-            </form>
-        </div>
-    </td></tr></table>
+    <div align="left">
+        <legend><span style="color:#00FF00">modulo richiesta assistenza</span></legend>
+
+        <form name="form1" id="form1" ><input type="hidden" id="form" name="form" value="1">
+        <p>
+            nome*<br>
+            <input type="text" name="nome" id="nome" ><br>cognome<br><input type="text" name="cognome" id="cognome"><br>
+            mail*<br>
+            <input name="mail" type="text" id="mail" ><br>telefono<br><input type="text" name="telefono" id="telefono"><br><br>
+            urgenza*<br>
+            <input type="radio" name="urgenza" value="1" id="urgenza_0">normale<br>
+            <input type="radio" name="urgenza" value="2" id="urgenza_1">abbastanza urgente<br>
+            <input type="radio" name="urgenza" value="3" id="urgenza_2">questione di vita o di morte<br>
+            <br>
+                    tipo di richiesta*<br>
+                    <input type="text" name="tipo_richiesta" id="tipo_richiesta">	<br>
+                    descrizione della richiesta*<br>
+                    <textarea name="descrizione_richiesta" id="descrizione_richiesta" rows="5"></textarea><br><br>	<input type="submit" name="invia" id="invia" value="invia">
+        </form>
+    </div>
+    
 </div>
 <br /> 
 
