@@ -15,7 +15,6 @@
 
     <!-- CSS personal -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <!-- <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> -->
 
     <!-- javascript -->
     <!-- jquery -->
