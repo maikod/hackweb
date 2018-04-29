@@ -18,6 +18,6 @@ if(isset($_SESSION['user'])){
 	echo "welcome back $utente";
 }else{
 	echo "please login...";
-	}
+}
 
 ?>

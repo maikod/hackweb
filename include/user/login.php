@@ -35,24 +35,24 @@ inserisci nome utente e password:<br>
 	$('#form3').submit(function(e){
         e.preventDefault();
         console.log("LOGIN");
-        // var data = $(this).serialize();
-        // $.post('../php/elabora_login.php', data)
-        //     .success(function(result){
-        //         //alert('welcome back ' + result);
-        //         if(result == 2){
-        //             $('#barra-sopra').html('user/password error');
-        //         }else if(result == 3){
-        //             $('#barra-sopra').html('this account is not veirfied');
-        //         }else{
-        //             $('#barra-sopra').html('welcome back ' + result);
-        //             $('#content').load('include/home.php');
-        //             $('#menu').load('include/menu.php');
-        //             utente = result;
-        //         }        	
-        //     })
-        //     .error(function(){
-        //         console.log('Error loading page');
-        //     })
+        var data = $(this).serialize();
+        $.post('../php/elabora_login.php', data)
+            .success(function(result){
+                //alert('welcome back ' + result);
+                if(result == 2){
+                    $('#barra-sopra').html('user/password error');
+                }else if(result == 3){
+                    $('#barra-sopra').html('this account is not veirfied');
+                }else{
+                    $('#barra-sopra').html('welcome back ' + result);
+                    $('#content').load('include/home.php');
+                    $('#menu').load('include/menu.php');
+                    utente = result;
+                }        	
+            })
+            .error(function(){
+                console.log('Error loading page');
+            })
         return false;
 	});
 </script>

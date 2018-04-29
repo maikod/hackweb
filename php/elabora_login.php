@@ -1,5 +1,4 @@
 <?php
-
 require_once("../lib/acc_class.php");
 
 $username = $_POST['username'];
@@ -14,5 +13,4 @@ if(!isset($check)){
 //verifica nome utente 
 $acc = new ACCOUNT;
 $acc->login($username, $pwd, $check);
-
 ?>
