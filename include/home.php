@@ -1,7 +1,3 @@
-<style type="text/css">
-
-</style>
-
 <hr>
 <span class="Stile2" style="">h@ckweb</span><br>
 Founded: 10/01/1996
@@ -9,7 +5,11 @@ Founded: 10/01/1996
 <br>  
 <span class="stilo3">SHARING THE KNOWLEDGE</span>
 <br>
-<p>Ciao sono <span class="color-1">Frankie</span>, faccio il programmatore e mi occupo di informatica.<br>Ho sempre passato molto tempo ad aggiustare computer,<br>
+<p>
+  <span class="color-1">Frankie</span>
+</p>
+
+<!-- <p>Ciao sono <span class="color-1">Frankie</span>, faccio il programmatore e mi occupo di informatica.<br>Ho sempre passato molto tempo ad aggiustare computer,<br>
   fornire assistenza/consulenza informatica, configurare reti di vario genere, ecc...</p>
 <p>Di seguito sono elencate le mie <span class="color-1">competenze</span>:</p>
 <div id="list-home">
@@ -20,8 +20,9 @@ Founded: 10/01/1996
   - Configurazione reti<br>  
   - Creazione e sviluppo di siti web<br>
   - Assistenza per l'acquisto di soluzioni informatiche<br>
-</div>
-  <br>  
+</div> -->
+
+<br>  
 <hr>
 <br>
 <span id="clock" class="stilo1"></span>
