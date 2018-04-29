@@ -6,7 +6,9 @@ Founded: 10/01/1996
 <span class="stilo3">SHARING THE KNOWLEDGE</span>
 <br>
 <p>
-  <span class="color-1">Frankie</span>
+  "I nuovi eroi sono i militanti politici. Negli anni Venti erano gli sportivi, negli anni Trenta e Quaranta le star del cinema e della seconda guerra mondiale, poi i nuovi eroi sono diventati i musicisti. 
+  Credo che i prossimi eroi saranno più intellettuali, politici o scienziati, o <strong>esperti di informatica</strong>. Insomma, gente di questo tipo: quelli che comprendono, <strong>quelli che riescono a capire come funzionano veramente le cose</strong>, come funziona la società moderna. Ecco i nostri prossimi eroi."
+  <span class="color-1">Jim Morrison</span>
 </p>
 
 <!-- <p>Ciao sono <span class="color-1">Frankie</span>, faccio il programmatore e mi occupo di informatica.<br>Ho sempre passato molto tempo ad aggiustare computer,<br>

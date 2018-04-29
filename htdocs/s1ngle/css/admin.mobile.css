@@ -1,0 +1,21 @@
+@media (max-width: 700px) {
+    #admin-content{
+        font-size: 14px;
+    }
+    .adm-btn{
+        font-size: 11px;
+    }
+    .admin-left-menu{
+        width: 115px;
+        max-width: 115px;    
+    }
+    .adm-margin_left{
+        margin-left: 115px;
+    }
+    #admin-content{        
+    padding: 10px;        
+    }
+    .admin-panel{        
+        padding: 5px;
+    }
+}

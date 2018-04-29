@@ -1,0 +1,23 @@
+
+<configuration>
+    <system.webServer>
+        <rewrite>
+            <rules>
+                <!-- <rule name="RequestBlockingRule1" patternSyntax="Wildcard" stopProcessing="true">
+                    <match url="*" />
+                    <conditions logicalGrouping="MatchAny">
+                        <add input="{QUERY_STRING}" pattern="*&lt;*>*" />
+                        <add input="{QUERY_STRING}" pattern="javascript" />
+                    </conditions>
+                    <action type="CustomResponse" statusCode="403" statusReason="A potentially dangerous Request.QueryString value was detected from the client." statusDescription="The URL contains potentially unsafe characters." />
+                </rule> -->
+
+                <rule name="rule 1Y" stopProcessing="true">
+                    <match url="^(.*)$"  ignoreCase="true" />
+                    <action type="Rewrite" url="/index.php?params={R:1}"  />
+                </rule>
+            </rules>
+        </rewrite>
+    </system.webServer>
+</configuration>
+
