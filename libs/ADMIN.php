@@ -15,57 +15,66 @@ class ADMIN extends DB
 {
     var $test = "test";
 
-    function __construct() {
+    // function __construct() {
         // parent::__construct();
-    }
+    // }
 
-    function __destruct(){
+    // function __destruct(){
         // parent::__destruct();
-    }
+    // }
 
 
     function login($data){
-        $data->password = md5($data->password);
-        // if(isset($data->ricordami)) print_r($data);
-
+        $data->password = md5($data->password);        
         setcookie($this->proteggi("g","giovi","potere","dfg","115"), "", time()-3600, "/");
-
         $sess_id = rand();
-        // $this->sql_open();
+        //connection
         $db = $this->conn;
         if ($db->connect_errno) {
             echo("Connect failed: " . $db->connect_error);
             exit();
-        }
+        }        
         //check potere
-        $sql = "SELECT potere FROM accounts WHERE password = ? AND username = ?";
+        $sql = "SELECT potere, verifica FROM accounts WHERE password = ? AND login = ?";
         $stmt = $db->prepare($sql);
         $stmt->bind_param('ss', $data->password, $data->username);
         $stmt->execute();
         //$stmt->store_result();
-        $stmt->bind_result($potere);
+        $stmt->bind_result($potere, $verifica);
         $i=0;
-        while($stmt->fetch()) {
-            $_SESSION['username'] = $data->username;
-            $_SESSION['potere'] = $potere;
+        $result = array(
+            'success'       => 0
+        );
+        while($stmt->fetch()) {                        
             $i++;
         }
         if($i==1){
-            $_SESSION['sess_id'] = $sess_id;
-            $sql = 'UPDATE brah_accounts SET sess_id=? WHERE password=? AND username=?';
-            $stmt = $db->prepare($sql);
-            $stmt->bind_param('sss', $sess_id,$data->password,$data->username);
-            $stmt->execute();
-            echo '1';
-        }else{
-            echo '0';
+            if($verifica == 0){
+                $result['success'] = 3;
+            }else{
+                $_SESSION['sess_id'] = $sess_id;
+                $_SESSION['username'] = $data->username;
+                $_SESSION['potere'] = $potere;
+                $sql = 'UPDATE accounts SET sess_id=? WHERE password=? AND login=?';
+                $stmt = $db->prepare($sql);
+                $stmt->bind_param('sss', $sess_id,$data->password,$data->username);
+                $stmt->execute();
+                $result['success'] = 1;
+                $result['utente'] = $data->username;
+                if(isset($data->ricordami)){
+                    $result['success'] = 2;
+                    setcookie($this->proteggi("g","giovi","potere","dfg","115"), $this->proteggi("d","erfsa",$potere,"afeg44","232"), time()+3000000, "/");
+                    setcookie(md5("username"), ("r" . sha1("qwe") . md5($user) . "aSd" . sha1("1")), time()+3000000, "/");			     
+                }                
+            }                        
         }
+        echo json_encode($result);
         $stmt->close();
-        // $this->sql_close();
     }
 
 
-    function checkLogin(){        
+    function checkLogin(){   
+        return;     
         $result = array();
         $result['username'] = '0';
         $result['potere'] = '-1';

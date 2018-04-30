@@ -14,7 +14,7 @@ class DB
 {
     var $conn;
     //local
-    var $host = "localhost";    
+    var $host = "127.0.0.1";    
     var $user = "root";
     var $pass = "franci";
     var $dbname = "hackweb";
@@ -35,8 +35,8 @@ class DB
 
     //costruttori
     function __construct(){  
-        if(in_array($_SERVER['SERVER_NAME'], $this->whitelist)){
-            $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
+        if(in_array($_SERVER['HTTP_HOST'], $this->whitelist)){
+            $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->dbname);            
         }else{
             $this->conn = new mysqli($this->host2, $this->user2, $this->pass2, $this->dbname2);
         }                
@@ -52,7 +52,7 @@ class DB
     //funzioni sql
     function sql_open()
     {                
-        if(in_array($_SERVER['SERVER_NAME'], $this->whitelist)){
+        if(in_array($_SERVER['SERVER_NAME'], $this->whitelist)){            
             $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
         }else{
             $this->conn = new mysqli($this->host2, $this->user2, $this->pass2, $this->dbname2);

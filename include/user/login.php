@@ -35,7 +35,7 @@ inserisci nome utente e password:<br>
 	$('#form3').submit(function(e){
         e.preventDefault();
         var send_data = { action: "login", data: objectifyForm($(this).serializeArray()) };
-        
+
         $.ajax({
             type: "POST",
             url: "libs/call_func.php",
@@ -44,17 +44,17 @@ inserisci nome utente e password:<br>
             async: true,
             success : function(data)
             {
-                console.log(data);
-                
-                if(result == 2){
+                data = JSON.parse(data);  
+                console.log(data);                
+                if(data.success == 0){                                    
                     $('#barra-sopra').html('user/password error');
-                }else if(result == 3){
+                }else if(data.success == 3){
                     $('#barra-sopra').html('this account is not veirfied');
                 }else{
-                    $('#barra-sopra').html('welcome back ' + result);
+                    $('#barra-sopra').html('welcome back ' + data.utente);
                     $('#content').load('include/home.php');
                     $('#menu').load('include/menu.php');
-                    utente = result;
+                    utente = data.utente;
                 } 
             }
         });

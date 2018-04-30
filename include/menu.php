@@ -1,3 +1,13 @@
+<?php 
+//funzione che carica automaticamente le classi
+function __autoload($nome_classe){
+    require_once '../libs/' . $nome_classe . '.php';
+}
+//inizializzazione della classe ACCOUNT
+$acc = new ADMIN;
+?>
+
+
 <div class="logincell" align="center">men&ugrave; principale</div>
 <div id="menu_block">
 	<ul id="main_menu">
@@ -9,15 +19,13 @@
 <div class="logincell" align="center">men&ugrave; utente</div>
 <div id="menu_block">
 	<ul id="main_menu">
-        <?php
-        //inizio della sessione
-		@session_start();
-		
-        require_once("../security/security.php");
-        if(isset($_SESSION['user']) || isset($_COOKIE[md5('user')])){
+        <?php        
+        if(isset($_SESSION['username']) || isset($_COOKIE[md5('username')])){
         	echo('<li><a class="button-menu" href="./include/user/logout.php">logout</a></li></ul>');
-        	
-        	if($_COOKIE[proteggi("g","giovi","potere","dfg","115")] >= proteggi("d","erfsa",100,"afeg44","232")){
+			$arr = (isset($_COOKIE[md5('username')])) ? $_COOKIE : $_SESSION;	
+			print_r($arr);		
+			// if(isset($_COOKIE[md5('username')])) echo "aaa";
+        	if($arr[$acc->proteggi("g","giovi","potere","dfg","115")] >= $acc->proteggi("d","erfsa",100,"afeg44","232")){
             	echo('
             		<br>
 					<div class="logincell" align="center">men&ugrave; amministratore</div>
@@ -35,7 +43,7 @@
 					');
 			}
 			
-			if($_COOKIE[proteggi("g","giovi","potere","dfg","115")] >= proteggi("d","erfsa",80,"afeg44","232")){
+			if($arr[$acc->proteggi("g","giovi","potere","dfg","115")] >= $acc->proteggi("d","erfsa",80,"afeg44","232")){
             	echo('<br>
 					<div class="logincell" align="center">CANCELLERIA privata</div>
 					<div id="menu_block">
