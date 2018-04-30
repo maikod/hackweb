@@ -58,7 +58,8 @@ class ADMIN extends DB
     }
 
 
-    function checkLogin(){              
+    function checkLogin(){ 
+        return;             
         $result = array();
         $result['username'] = '0';
         $result['potere'] = '-1';

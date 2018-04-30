@@ -110,7 +110,7 @@ if(!@$params[0]) @$params[0] = '__';
 $_SESSION['lang'] = (@$params[0] == '__') ? $lang : @$params[0];
 
 if($_SESSION['lang'] != 'en' && $_SESSION['lang'] != 'it'){    
-    header('Location: '.$_SESSION['full_link'].'/it');    
+    header('Location: '.$_SESSION['full_link'].'it');    
     exit;
 }
 
