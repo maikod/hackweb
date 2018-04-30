@@ -26,7 +26,10 @@ class ADMIN extends DB
 
     function login($data){
         $data->password = md5($data->password);
-        $ric = $data->ric;
+        // if(isset($data->ricordami)) print_r($data);
+
+        setcookie($this->proteggi("g","giovi","potere","dfg","115"), "", time()-3600, "/");
+
         $sess_id = rand();
         // $this->sql_open();
         $db = $this->conn;
@@ -34,6 +37,7 @@ class ADMIN extends DB
             echo("Connect failed: " . $db->connect_error);
             exit();
         }
+        //check potere
         $sql = "SELECT potere FROM accounts WHERE password = ? AND username = ?";
         $stmt = $db->prepare($sql);
         $stmt->bind_param('ss', $data->password, $data->username);

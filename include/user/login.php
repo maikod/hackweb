@@ -17,7 +17,7 @@ inserisci nome utente e password:<br>
             </label>
             <label>
             <div align="center">
-                <input name="ricordami" type="checkbox" id="ricordami" value="ric" />
+                <input name="ricordami" type="checkbox" id="ricordami" value="true" />
                 ricordami</div>
             </label>
             <br>
@@ -34,11 +34,18 @@ inserisci nome utente e password:<br>
 <script>		
 	$('#form3').submit(function(e){
         e.preventDefault();
-        console.log("LOGIN");
-        var data = $(this).serialize();
-        $.post('../php/elabora_login.php', data)
-            .success(function(result){
-                //alert('welcome back ' + result);
+        var send_data = { action: "login", data: objectifyForm($(this).serializeArray()) };
+        
+        $.ajax({
+            type: "POST",
+            url: "libs/call_func.php",
+            data: JSON.stringify(send_data),
+            contentType: "application/json",
+            async: true,
+            success : function(data)
+            {
+                console.log(data);
+                
                 if(result == 2){
                     $('#barra-sopra').html('user/password error');
                 }else if(result == 3){
@@ -48,11 +55,9 @@ inserisci nome utente e password:<br>
                     $('#content').load('include/home.php');
                     $('#menu').load('include/menu.php');
                     utente = result;
-                }        	
-            })
-            .error(function(){
-                console.log('Error loading page');
-            })
+                } 
+            }
+        });
         return false;
 	});
 </script>
