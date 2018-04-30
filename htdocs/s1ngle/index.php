@@ -3,7 +3,6 @@
 <?php
 //php iniziale
 include_once('libs/config.php');
-//CIAO
 ?>
 
 <!DOCTYPE html>
